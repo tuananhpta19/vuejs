@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="obj">
+        {{sayHello()}}
+    </div>
+</body>
+<script>
+    new Vue({
+        el:".obj",
+        data:{
+            noidung:"day la vuejs test"
+        },
+        methods:{
+            sayHello: function(){
+                return this.noidung
+            }
+        }
+    })
+</script>
+</html>
