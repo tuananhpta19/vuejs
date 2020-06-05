@@ -8,20 +8,59 @@
 </head>
 <body>
     <div class="obj">
-        {{sayHello()}}
+        <div v-on:mouseover="tinhToaDo">
+            <!-- v-html: để nhúng 1 đoạn html từ vuejs vào html -->
+            <p v-html='testHTML'></p>
+            <!-- v-once: khi sử dụng 1 data trong vuejs và thay đổi giá trị đấy thì sử dụng thêm thuộc tính 
+            v-once thì phần tử ban đầu k bị thay đổi dù ta có gán lại giá trị của biến đấy ở đâu đi chăng nữa
+            -->
+            <p v-once>" {{noidung}} "- {{sayHello()}}</p>
+            <!-- v-bind: định nghĩa lại thuộc tính của html, nhúng giá trị từ vuejs vào thuộc tính của html -->
+            <a v-bind:href="link">vao link de</a>
+
+            <p>An vao de tang gia tri</p>
+            <button v-on:click="dem+=1">Click de</button>
+            <p>{{dem}}</p>
+            <p v-once>gia tri ban dau: {{dem+1}}</p>
+            <button v-on:click="dem=0">reset de</button>
+            <p>Toa do cua x va y la {{x}},{{y}}</p>
+        </div>
     </div>
 </body>
 <script>
-    new Vue({
+  var test=  new Vue({
         el:".obj",
         data:{
-            noidung:"day la vuejs test"
+            noidung:"day la vuejs test",
+            link: "https://facebook.com/tuananh.pta19",
+            testHTML:"<a href='https://google.com'>day la noi dung trang gooogle</a>",
+            dem: 0,
+            x:0,
+            y:0
         },
         methods:{
             sayHello: function(){
+                this.noidung= "Noi dung da duoc cap nhat"
                 return this.noidung
+            },
+            tangGiaTri: function(){
+                this.dem++
+            },
+            resetGiaTri:function(){
+                this.dem=0;
+            },
+            tinhToaDo:function(event){
+                this.x=event.clientX;
+                this.y=event.clientY;
             }
         }
     })
+
+
+
+
+
+
+   
 </script>
 </html>
