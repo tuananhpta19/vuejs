@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>{{ diem }}</p>
+    </div>
+
+</body>
+<script>
+    //theo dõi 1 hành động của biến rồi thực hiện 1 hành động nào đáy
+    var app= new Vue({
+        el:"#app",
+        data:{
+            diem:" Ban nay duoc 7 diem "
+        },
+        watch:{
+            diem:function(newValue){
+                alert("ban nay vua moi cap nhat diem nay")
+            }
+        }
+    })
+
+    app.diem="ban nay duoc 8 diem nha"
+</script>
+</html>

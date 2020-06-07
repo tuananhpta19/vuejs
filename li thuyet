@@ -1,1 +1,5 @@
 -vuejs tạo một đối tượng để quản lí 1 đối tượng trong html ( đối tượng trong html đó là cac thẻ, 1 thẻ được coi là 1 đối tượng);
+- v-once: thêm vào thuộc tính của thẻ html, giúp cho không thay đổi giá trị của thuộc tính trong data- vuejs 
+- v-model
+- v-html: đưa html từ data của vuejs vào thẻ html khi gọi thuộc tính đấy trên html
+    

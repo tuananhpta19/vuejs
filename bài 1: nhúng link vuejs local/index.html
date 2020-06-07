@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+
     <div class="obj">
         <div v-on:mouseover="tinhToaDo">
             <!-- v-html: để nhúng 1 đoạn html từ vuejs vào html -->
@@ -24,8 +25,36 @@
             <p v-once>gia tri ban dau: {{dem+1}}</p>
             <button v-on:click="dem=0">reset de</button>
             <p>Toa do cua x va y la {{x}},{{y}}</p>
+
+            <p v-on:mouseover="dungSuKien">Dung su kien de</p>
+            <input v-on:keyup.13="doSomething" />
+
+            <button v-on:click.exact="onClick">A</button>
+            <a v-on:click.once="doThis">aaaaaaaaaaaaaaaaaaaaaa</a>
+            <div v-on:click.capture="doThis">...</div>
+
+
+            <!-- <input  type = "checkbox" value="sai"  id = "checkbox"  v-model="checked">Sai
+            <label  for = "checkbox"> {{checked}} </label> -->
+
+
+                <p>==========================================================</p>
+                <!-- <input type="text" v-bind:value="value" name="password" placeholder="password" >
+                <input type="text" v-bind:value="value" name="name" placeholder="name" > -->
+                <select  v-model = "selected" > 
+                    <option v-bind:value="{number: 31}" > 123 </option >
+                    <option v-bind:value="{number: 32}" > 1223 </option >
+                </select >
+                <p>  {{  selected.number }}</p>
+
+
+            <p>Day la input text day ---------------------</p>
+            <input type="text" value={{xuLiData}} id="text" v-model="input_text">
+            <p> {{input_text}} </p>
         </div>
     </div>
+<p>--------------------------------</p>
+
 </body>
 <script>
   var test=  new Vue({
@@ -36,7 +65,10 @@
             testHTML:"<a href='https://google.com'>day la noi dung trang gooogle</a>",
             dem: 0,
             x:0,
-            y:0
+            y:0,
+            checked:[],
+            input_text: "",
+            selected:[]
         },
         methods:{
             sayHello: function(){
@@ -52,11 +84,28 @@
             tinhToaDo:function(event){
                 this.x=event.clientX;
                 this.y=event.clientY;
+            },
+            dungSuKien:function(){
+              event.preventDefault()
+            },
+            doSomething:function(){
+                console.log("aaaaaaaaaaa");
+            },
+            onClick:function(){
+                console.log("bbbbbbbb");
+            },
+            doThis:function(){
+                console.log("ccccccccc");
+            },
+            selected:function(){
+                console.log(111);
+                console.log(vm.selected.option);
+            },
+            xuLiData:function(){
+                console.log("Avasdcvasc");
             }
         }
     })
-
-
 
 
 

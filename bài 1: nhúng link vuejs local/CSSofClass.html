@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+    <style>
+        .vuong{
+            width: 100px;
+            height: 100px;
+            background-color: grey;
+            display: inline-block;
+            margin: 10px;
+        }
+        .do{
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="vuong" @click="quanlidoFunc" :class=quanlidoFunc()> {{ quanlidoFunc() }} </div>
+        <div class="vuong"></div>
+        <div class="vuong"></div>
+        <div class="vuong"></div>
+    </div>
+
+</body>
+<script>
+    var app= new Vue({
+        el:"#app",
+        data:{
+            quanlido:false
+        },
+        computed:{
+        },
+        methods:{
+            quanlidoFunc(){
+                 if(this.quanlido = !this.quanlido){
+                    return {
+                        do: this.quanlido,
+                        a:"BC"
+                    }
+                 }else{
+                 
+                    return {
+                     do: this.quanlido,
+                 }
+                 }
+               
+            }
+        }
+    })
+
+</script>
+</html>
