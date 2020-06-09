@@ -8,9 +8,8 @@
 </head>
 <body>
     <div id="app">
-        <p>gia tri A: {{ tangA }}</p>
-        <p>gia tri B: {{ tangB }}</p>
-        <p>gia tri C: {{ tangC }}</p>
+        <p>gia tri A method: {{ tangAMethod() }}</p>
+        <p>gia tri A: {{ tangACompute }}</p>
         <button v-on:click="a++">Tang A</button>
         <button v-on:click="b++">Tang B</button>
     </div>
@@ -19,29 +18,26 @@
         //computed thực hiện như 1 function nhưng nó chỉ được coi là 1 thuộc tính
         // có dạng dữ liệu như 1 function giống method nhưng nó không phải là function
         // thứ tự chạy thì computed chạy trước rồi đến methods
-        new Vue({
+      var vm=  new Vue({
             el:'#app',
             data:{
                 a:0,
-                b:0
+                b:0,
+                money: 22000000
             },
             computed:{
-                tangA:function(){
-                    console.log("goi function tang A");
-                    return this.a
-                },
-                tangB:function(){
-                    console.log("goi function tang B");
-                    return this.b
-                },
-                tangC:function(){
-                    console.log("tang C");
-                    return 1
-                }
+             tangACompute: function(){
+                 console.log('tangACompute');
+                 return this.a
+             }
             },
             methods:{
-            
+                tangAMethod:function(){
+                    console.log("goi function tang A method");
+                    return this.a
+                }
             }
         })
+  
     </script>
 </html>

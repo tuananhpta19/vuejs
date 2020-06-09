@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button  ref="infoButton"> Click</button>
+    </div>
+
+</body>
+<script>
+    //theo dõi 1 hành động của biến rồi thực hiện 1 hành động nào đáy
+    var app= new Vue({
+        el:"#app",
+        data:{
+           
+        },
+        methods:{
+            show(){
+                console.log("Aaaaaaaaa");
+                this.$refs.infoButton.innerText="show button"
+                // this.$refs.infoButton.onclick()
+            }
+        }
+    })
+    app.$refs.infoButton.addEventListener("click",app.show,false)
+    app.diem="ban nay duoc 8 diem nha"
+</script>
+</html>
